@@ -52,6 +52,7 @@ cardsArray.sort(() => 0.5 - Math.random());
 
 const gridDisplay = document.querySelector("#grid");
 const scoreDisplay = document.querySelector("#score");
+const gridContainer = document.querySelector(".wrapper");
 let cardsChosen = [];
 let cardsChosenIds = [];
 const scores = [];
@@ -67,7 +68,15 @@ function cardBoard() {
   }
 }
 cardBoard();
-
+function newGame() {
+  const newGameButton = document.createElement("button");
+  newGameButton.textContent = "Play again";
+  newGameButton.classList.add("play-again-btn");
+  gridContainer.appendChild(newGameButton);
+  newGameButton.addEventListener("click", () => {
+    window.location.reload(); // * RELOADS THE BROWSER TO INITIALIZE A NEW GAME
+  });
+}
 function checkMatch() {
   const cards = document.querySelectorAll("#grid img");
   console.log("Check a match");
@@ -88,6 +97,9 @@ function checkMatch() {
   cards[cardsChosenIds[1]].setAttribute("src", "images/blank.png");
   cardsChosen = [];
   cardsChosenIds = [];
+  if (scores.length === cardsArray.length / 2) {
+    newGame();
+  }
 }
 
 function flipCard() {

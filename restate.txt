@@ -14,6 +14,7 @@ Call check match after user has selected two cards:
 User should know how many cards won
 
 Add text to indicate what user has matched so far
+Add icon next to text to show card scored
 Add playAgain button to play the game playAgain
 Add different sounds:
     On clicking each card

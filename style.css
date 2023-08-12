@@ -41,3 +41,30 @@ body {
 .score {
   font-family: "Roboto", sans-serif;
 }
+
+/*  ADDED BY THE DOM  */
+.play-again-btn {
+  margin-top: 12px;
+  padding: 12px;
+  color: chocolate;
+  background-color: darkorchid;
+  font-weight: bolder;
+  font-size: 20px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 7px;
+  /* animation: glowing 1300ms infinite; */
+}
+@keyframes glowing {
+  0% {
+    background-color: #19440c;
+    box-shadow: 0 0 3px #37a715;
+  }
+  50% {
+    background-color: #399a1b;
+    box-shadow: 0 0 10px #679a57;
+  }
+  100% {
+    background-color: #2b8f0c;
+    box-shadow: 0 0 3px #559642;
+  }
+}
