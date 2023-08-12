@@ -17,7 +17,7 @@ body {
 .visibility {
   visibility: hidden;
 }
-.container {
+.wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,5 +27,17 @@ body {
   color: rgb(90, 22, 47);
   font-weight: bold;
   font-size: 28px;
+}
+.header-text {
+  font-weight: 700;
+  color: rgb(43, 5, 13);
+  font-size: 1.3em;
+}
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+.header-text,
+.score {
   font-family: "Roboto", sans-serif;
 }
