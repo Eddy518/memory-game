@@ -98,7 +98,9 @@ function flipCard() {
   cardsChosen.push(cardsArray[cardId].name);
 
   this.setAttribute("src", cardsArray[cardId].img); // * CHANGE FROM BLANK TO $IMAGE
-
+  setTimeout(() => {
+    this.setAttribute("src", "assets/images/blank.png"); // * RESET FLIPPED CARD TO BLANK AFTER NOT CLICKING ANOTHER CARD
+  }, 5000);
   if (cardsChosen.length === 2) {
     setTimeout(checkMatch, 500);
   }
