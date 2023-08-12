@@ -13,6 +13,7 @@ body {
   border-width: 10px;
   border-style: dotted;
   padding: 1px;
+  /* animation: glowingBorder 3400ms infinite; */
 }
 .visibility {
   visibility: hidden;
@@ -54,6 +55,7 @@ body {
   border-radius: 7px;
   /* animation: glowing 1300ms infinite; */
 }
+/*
 @keyframes glowing {
   0% {
     background-color: #19440c;
@@ -68,3 +70,16 @@ body {
     box-shadow: 0 0 3px #559642;
   }
 }
+*/
+/* @keyframes glowingBorder {
+  0% {
+    border-image: linear-gradient(to top, red, purple) 30;
+  }
+  50% {
+    border-image: linear-gradient(to top, rgb(127, 53, 127), rgb(148, 89, 89))
+      30;
+  }
+  100% {
+    border-image: linear-gradient(to top, red, purple) 30;
+  }
+} */
