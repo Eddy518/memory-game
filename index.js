@@ -51,9 +51,10 @@ const cardsArray = [
 cardsArray.sort(() => 0.5 - Math.random());
 
 const gridDisplay = document.querySelector("#grid");
+const scoreDisplay = document.querySelector("#score");
 let cardsChosen = [];
 let cardsChosenIds = [];
-
+const scores = [];
 function cardBoard() {
   for (let i = 0; i < cardsArray.length; i++) {
     let card = document.createElement("img");
@@ -79,6 +80,8 @@ function checkMatch() {
       cards[cardsChosenIds[0]].classList.add("visibility");
       cards[cardsChosenIds[1]].classList.add("visibility");
       console.log("Match found");
+      scores.push(cardsChosen[0] && cardsChosen[1]);
+      scoreDisplay.textContent = scores;
     }
   }
   cards[cardsChosenIds[0]].setAttribute("src", "images/blank.png");

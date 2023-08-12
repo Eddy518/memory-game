@@ -21,5 +21,6 @@ Add different sounds:
     On clicking the same card twice
     On clicking two cards and not finding a match
     On finishing the game
+Add countdown to end game
 
 New level to match three cards instead of two
