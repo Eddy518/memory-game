@@ -13,6 +13,13 @@ Call check match after user has selected two cards:
         if not flip back the cards
 User should know how many cards won
 
+Add text to indicate what user has matched so far
+Add playAgain button to play the game playAgain
+Add different sounds:
+    On clicking each card
+    On finding a match
+    On clicking the same card twice
+    On clicking two cards and not finding a match
+    On finishing the game
 
-
-
+New level to match three cards instead of two
