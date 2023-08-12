@@ -1,0 +1,31 @@
+* {
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap");
+}
+body {
+  background-image: linear-gradient(rgb(57, 57, 147), rgb(184, 30, 104));
+  height: 100vh;
+}
+#grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  border-image: linear-gradient(to top, red, purple) 30;
+  border-width: 10px;
+  border-style: dotted;
+  padding: 1px;
+}
+.visibility {
+  visibility: hidden;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.score {
+  color: rgb(90, 22, 47);
+  font-weight: bold;
+  font-size: 28px;
+  font-family: "Roboto", sans-serif;
+}

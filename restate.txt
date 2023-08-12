@@ -1,0 +1,18 @@
+Add images using an object in an array 
+Sort the images in a random manner using Math.sort() and Math.random()
+Create a board of divs  using JavaScript to store the images : Loop
+Add blank image to the board
+Add data-id to know which image has been clicked
+Add event listener to know which card has been selected
+Call flip card to flip the card
+        flip card:
+            replaces card with actual card
+Call check match after user has selected two cards:
+    checkMatch():
+        checks if cards chosen are the same (if same remove the image ) if equal award the user a score of one
+        if not flip back the cards
+User should know how many cards won
+
+
+
+
