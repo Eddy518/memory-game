@@ -61,6 +61,7 @@ function cardBoard() {
     let card = document.createElement("img");
     card.setAttribute("src", "images/blank.png");
     card.setAttribute("data-id", i);
+    // card.setAttribute("draggable", false); // * DISABLE IMAGE DRAGGING
     gridDisplay.appendChild(card);
     card.addEventListener("click", flipCard);
 
