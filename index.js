@@ -107,7 +107,8 @@ function checkMatch() {
   cardsChosenIds = [];
   if (scores.length === cardsArray.length / 2) {
     winGameSound.currentTime = 0;
-    winGameSound.play();
+    setTimeout(winGameSound.play(), 1000);
+    gridDisplay.setAttribute("style", "animation:none;"); // * STOP GRID ANIMATION AFTER GAME OVER
     setTimeout(newGame(), 500); // * SHOW BUTTON AFTER 500 MS
   }
 }

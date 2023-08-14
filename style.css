@@ -13,7 +13,7 @@ body {
   border-width: 10px;
   border-style: dotted;
   padding: 1px;
-  /* animation: glowingBorder 3400ms infinite; */
+  animation: glowingBorder 3400ms infinite;
 }
 .visibility {
   visibility: hidden;
@@ -48,30 +48,28 @@ body {
   margin-top: 12px;
   padding: 12px;
   color: chocolate;
-  background-color: darkorchid;
   font-weight: bolder;
   font-size: 20px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   border-radius: 7px;
-  /* animation: glowing 1300ms infinite; */
+  animation: glowing 2000ms ease-in-out infinite;
 }
-/*
+
 @keyframes glowing {
   0% {
-    background-color: #19440c;
-    box-shadow: 0 0 3px #37a715;
+    background-color: #490d67;
+    box-shadow: 0 0 3px #490d67;
   }
   50% {
-    background-color: #399a1b;
-    box-shadow: 0 0 10px #679a57;
+    background-color: #7421a4;
+    box-shadow: 0 0 10px #7421a4;
   }
   100% {
-    background-color: #2b8f0c;
-    box-shadow: 0 0 3px #559642;
+    background-color: #490d67;
+    box-shadow: 0 0 3px #490d67;
   }
 }
-*/
-/* @keyframes glowingBorder {
+@keyframes glowingBorder {
   0% {
     border-image: linear-gradient(to top, red, purple) 30;
   }
@@ -82,4 +80,4 @@ body {
   100% {
     border-image: linear-gradient(to top, red, purple) 30;
   }
-} */
+}
