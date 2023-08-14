@@ -1,51 +1,51 @@
 const cardsArray = [
   {
     name: "cheeseburger",
-    img: "images/cheeseburger.png",
+    img: "assets/images/cheeseburger.png",
   },
   {
     name: "fries",
-    img: "images/fries.png",
+    img: "assets/images/fries.png",
   },
   {
     name: "hotdog",
-    img: "images/hotdog.png",
+    img: "assets/images/hotdog.png",
   },
   {
     name: "ice-cream",
-    img: "images/ice-cream.png",
+    img: "assets/images/ice-cream.png",
   },
   {
     name: "milkshake",
-    img: "images/milkshake.png",
+    img: "assets/images/milkshake.png",
   },
   {
     name: "pizza",
-    img: "images/pizza.png",
+    img: "assets/images/pizza.png",
   },
   {
     name: "cheeseburger",
-    img: "images/cheeseburger.png",
+    img: "assets/images/cheeseburger.png",
   },
   {
     name: "fries",
-    img: "images/fries.png",
+    img: "assets/images/fries.png",
   },
   {
     name: "hotdog",
-    img: "images/hotdog.png",
+    img: "assets/images/hotdog.png",
   },
   {
     name: "ice-cream",
-    img: "images/ice-cream.png",
+    img: "assets/images/ice-cream.png",
   },
   {
     name: "milkshake",
-    img: "images/milkshake.png",
+    img: "assets/images/milkshake.png",
   },
   {
     name: "pizza",
-    img: "images/pizza.png",
+    img: "assets/images/pizza.png",
   },
 ];
 cardsArray.sort(() => 0.5 - Math.random());
@@ -53,15 +53,18 @@ cardsArray.sort(() => 0.5 - Math.random());
 const gridDisplay = document.querySelector("#grid");
 const scoreDisplay = document.querySelector("#score");
 const gridContainer = document.querySelector(".wrapper");
+const winGameSound = new Audio("assets/audio/win.wav");
+const matchedCardsSound = new Audio("assets/audio/matched_cards.mp3");
+const unmatchedCardsSound = new Audio("assets/audio/unmatched_cards.mp3");
 let cardsChosen = [];
 let cardsChosenIds = [];
 const scores = [];
 function cardBoard() {
   for (let i = 0; i < cardsArray.length; i++) {
     let card = document.createElement("img");
-    card.setAttribute("src", "images/blank.png");
+    card.setAttribute("src", "assets/images/blank.png");
     card.setAttribute("data-id", i);
-    // card.setAttribute("draggable", false); // * DISABLE IMAGE DRAGGING
+    card.setAttribute("draggable", false); // * DISABLE IMAGE DRAGGING
     gridDisplay.appendChild(card);
     card.addEventListener("click", flipCard);
 
@@ -90,16 +93,22 @@ function checkMatch() {
       cards[cardsChosenIds[0]].classList.add("visibility");
       cards[cardsChosenIds[1]].classList.add("visibility");
       console.log("Match found");
+      matchedCardsSound.currentTime = 0; // * ALLOW REPEATED PLAYBACK
+      matchedCardsSound.play();
       scores.push(cardsChosen[0] && cardsChosen[1]);
       scoreDisplay.textContent = scores;
     }
   }
-  cards[cardsChosenIds[0]].setAttribute("src", "images/blank.png");
-  cards[cardsChosenIds[1]].setAttribute("src", "images/blank.png");
+  cards[cardsChosenIds[0]].setAttribute("src", "assets/images/blank.png");
+  cards[cardsChosenIds[1]].setAttribute("src", "assets/images/blank.png");
+  unmatchedCardsSound.currentTime = 0;
+  unmatchedCardsSound.play();
   cardsChosen = [];
   cardsChosenIds = [];
   if (scores.length === cardsArray.length / 2) {
-    newGame();
+    winGameSound.currentTime = 0;
+    winGameSound.play();
+    setTimeout(newGame(), 500); // * SHOW BUTTON AFTER 500 MS
   }
 }
 
