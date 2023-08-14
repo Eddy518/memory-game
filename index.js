@@ -107,9 +107,11 @@ function checkMatch() {
   cardsChosenIds = [];
   if (scores.length === cardsArray.length / 2) {
     winGameSound.currentTime = 0;
-    setTimeout(winGameSound.play(), 1000);
+    winGameSound.play();
     gridDisplay.setAttribute("style", "animation:none;"); // * STOP GRID ANIMATION AFTER GAME OVER
-    setTimeout(newGame(), 500); // * SHOW BUTTON AFTER 500 MS
+    setTimeout(() => {
+      newGame();
+    }, 70); // * SHOW BUTTON AFTER 70 MS
   }
 }
 
@@ -125,7 +127,9 @@ function flipCard() {
     this.setAttribute("src", "assets/images/blank.png"); // * RESET FLIPPED CARD TO BLANK AFTER NOT CLICKING ANOTHER CARD
   }, 5000);
   if (cardsChosen.length === 2) {
-    setTimeout(checkMatch, 500);
+    setTimeout(() => {
+      checkMatch();
+    }, 300);
   }
 
   console.log(`cardId is ${cardId}`);
